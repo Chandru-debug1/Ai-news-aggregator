@@ -9,7 +9,7 @@ from deep_translator import GoogleTranslator
 import os
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyCn5TSbk7SYU1b1ADykXYvI02xzdVZyd48")
+genai.configure(api_key="")
 
 # Load spaCy NLP model
 nlp = spacy.load("en_core_web_sm")
@@ -61,7 +61,7 @@ def generate_speech(text, lang, filename="news_audio.mp3"):
 
 def get_news_by_country_category_date(country, category, keyword, date):
     """Fetch news based on country, category, keyword, and date using Mediastack API."""
-    MEDIASTACK_API_KEY = "46dbbb88980aabc6699a72e1be8c6ffb"
+    MEDIASTACK_API_KEY = ""
     url = f"http://api.mediastack.com/v1/news?access_key={MEDIASTACK_API_KEY}&countries={country}&categories={category}&keywords={keyword}&date={date}&limit=15"
     response = requests.get(url)
     news_data = response.json()
